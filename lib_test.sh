@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # tc <tcneko@outlook.com>
-# Create: 2018.02
+# Create: 2018.08
 # Last update:
 # Last test environment: Ubuntu 18.04
 #
-# Basic shell library
+# shell library
 
 if [ -z "$include_lib_test" ]; then
 
@@ -40,8 +40,7 @@ if [ -z "$include_lib_test" ]; then
     }
 
     function test_network_exit() {
-        test_addr='www.baidu.com'
-        ping -c1 -W1 $test_addr &>/dev/null
+        ping -c1 -W1 "$1" &>/dev/null
         test_cmd_fail_exit 'Please check network'
     }
 
@@ -53,6 +52,14 @@ if [ -z "$include_lib_test" ]; then
         test_dir_x "$1"
         test_cmd_fail_exit "$2"
     }
+    function test_dir_w() {
+        test -d "$1" -a -w "$1"
+    }
+
+    function test_dir_w_exit() {
+        test_dir_x "$1"
+        test_cmd_fail_exit "$2"
+    }
 
     function test_file_r() {
         test -f "$1" -a -r "$1"
@@ -60,6 +67,15 @@ if [ -z "$include_lib_test" ]; then
 
     function test_file_r_exit() {
         test_file_r "$1"
+        test_cmd_fail_exit "$2"
+    }
+
+    function test_file_w() {
+        test -f "$1" -a -w "$1"
+    }
+
+    function test_file_w_exit() {
+        test_file_w "$1"
         test_cmd_fail_exit "$2"
     }
 

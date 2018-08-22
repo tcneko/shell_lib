@@ -5,7 +5,7 @@
 # Last update:
 # Last test environment: Ubuntu 18.04
 #
-# interaction shell library
+# shell library
 
 if [ -z "$include_lib_interaction" ]; then
 
@@ -27,8 +27,8 @@ if [ -z "$include_lib_interaction" ]; then
     }
 
     function request_input() {
-        echo "$1"
-        eval "read -ep '>>> ' $2"
+        echo "$2"
+        eval "read -ep '>>> ' $1"
     }
 
     function request_yn() {
