@@ -1,11 +1,10 @@
 #!/bin/bash
 
-# tc <tcneko@outlook.com>
-# Create: 2018.08
-# Last update:
-# Last test environment: Ubuntu 18.04
-#
-# shell library
+# tcneko <tcneko@outlook.com>
+# create: 2018.08
+# last update: 2018.10
+# last test environment: Ubuntu 18.04
+# description: 
 
 if [ -z "$include_lib_interaction" ]; then
 
@@ -36,6 +35,6 @@ if [ -z "$include_lib_interaction" ]; then
         request_input "$prompt_info" cho_yn
     }
 
-    include_lib_interaction='0'
+    export include_lib_interaction='0'
 
 fi

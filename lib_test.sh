@@ -1,13 +1,14 @@
 #!/bin/bash
 
-# tc <tcneko@outlook.com>
-# Create: 2018.08
-# Last update:
-# Last test environment: Ubuntu 18.04
-#
-# shell library
+# tcneko <tcneko@outlook.com>
+# create: 2018.08
+# last update: 2018.10
+# last test environment: Ubuntu 18.04
+# description:
 
 if [ -z "$include_lib_test" ]; then
+
+    source $(dirname ${BASH_SOURCE[0]})/lib_interaction.sh
 
     function test_cmd_fail() {
         if [ $? -ne 0 ]; then
@@ -79,6 +80,6 @@ if [ -z "$include_lib_test" ]; then
         test_cmd_fail_exit "$2"
     }
 
-    include_lib_test='0'
+    export include_lib_test='0'
 
 fi
