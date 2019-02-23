@@ -80,6 +80,6 @@ if [ -z "$include_lib_test" ]; then
         test_cmd_fail_exit "$2"
     }
 
-    export include_lib_test='0'
+    include_lib_test='0'
 
 fi

@@ -35,6 +35,6 @@ if [ -z "$include_lib_interaction" ]; then
         request_input "$prompt_info" cho_yn
     }
 
-    export include_lib_interaction='0'
+    include_lib_interaction='0'
 
 fi
