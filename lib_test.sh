@@ -6,12 +6,12 @@
 # description:
 
 # to use this library, please add the following line to the main script
-# source $(dirname ${BASH_SOURCE[0]})/lib_interaction.sh
+# source $(dirname ${BASH_SOURCE[0]})/lib/lib_interaction.sh
 # export flag_lib_interaction=0
-# source $(dirname ${BASH_SOURCE[0]})/lib_test.sh
+# source $(dirname ${BASH_SOURCE[0]})/lib/lib_test.sh
 # export flag_lib_test=0
 
-if [[ "$flag_lib_test" -ne 0 ]]; then
+if [[ -z "$flag_lib_test" ]]; then
 
   test_cmd_fail() {
     if [ $? -ne 0 ]; then
